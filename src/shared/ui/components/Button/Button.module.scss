@@ -9,9 +9,16 @@
     line-height: 1.15;
 
     &:hover {
-        transition: all .1s ease;
-        box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+        transition: all 0.2s ease;
+        box-shadow: 0 0 0 0 #fff, 0 0 0 1px  #2ECC71;
     }
+
+    
+    &:active{
+        box-shadow: 0 0 0 0 #fff, 0 0 0 3px  #2ECC71;
+        transition: all 0.3s ease;
+    }
+    
 
     &:disabled {
         opacity: 0.5;
@@ -21,16 +28,33 @@
 }
 
 .default {
-    background: #000a47;
+    background: #3498DB;
+
+    &:hover {
+        box-shadow: 0 0 0 0 #fff, 0 0 0 1px  #3498DB;
+    }
+
+    
+    &:active{
+        box-shadow: 0 0 0 0 #fff, 0 0 0 3px  #3498DB;
+    }
 }
 
 .approve {
-    background: #1de9b6;
-    color: #000308;
+    background:  #2ECC71;
 }
 
 .delete {
-    background: #ff5000;
+    background: #E74C3C;
+
+    &:hover {
+        box-shadow: 0 0 0 0 #fff, 0 0 0 1px  #E74C3C;
+    }
+
+    
+    &:active{
+        box-shadow: 0 0 0 0 #fff, 0 0 0 3px  #E74C3C;
+    }
 }
 
 .small {
