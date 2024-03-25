@@ -1,28 +1,26 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import { Main, NotFound } from "@/pages";
-import { RouteConfig } from "./routeConfig";
-import { Protected } from "./Protected";
+import { NotFound } from "@/pages";
+import { 
+    ProtectedRoutes, 
+    PublicRoutes
+} from "./routeConfig";
+import { Protected, Public } from "./routeTypes";
+import { basePath } from "@/shared/lib/variables";
 
 export const router = createBrowserRouter([
     {
-        path: '/',
+        path: basePath,
         Component: App,
         errorElement: <NotFound />,
         children: [
             {
-                index: true,
-                Component: Main
+                Component: Public,
+                children: PublicRoutes
             },
             {
                 Component: Protected,
-                children: Object.values(RouteConfig).slice(1).map(({
-                    Component,
-                    path
-                }) => ({
-                    path: path,
-                    Component: Component
-                }))
+                children: ProtectedRoutes
             }
         ]
     }

@@ -1,4 +1,3 @@
-export { validateData } from "./validateData";
 export { 
     getItemFromLocalStorage, 
     setItemInLocalStorage, 
